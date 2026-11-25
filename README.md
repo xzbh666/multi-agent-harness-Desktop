@@ -2,14 +2,28 @@
 
 **One workspace. Multiple agents. Shared tasks.**
 
-A free, local-first desktop workspace for coordinating independent AI agents such as Claude Code, Codex, Pi and Gemini CLI. Bring your own agents, APIs and subscriptions. The platform does not require a default LLM or a paid platform subscription.
+A free, open-source, local-first desktop platform for orchestrating Claude Code, Codex, Pi, Gemini CLI and other independent agents. Bring your own agents, APIs and subscriptions. No paid platform subscription or mandatory default LLM.
 
-一个以任务为中心的本地桌面 Agent 编排平台，统一管理跨 CLI 的任务、会话、交接、工作流和执行记录。
+一个以任务为中心的本地桌面 Agent 编排平台，而非另一个聊天客户端。
 
-## Status
+## Development status
 
-Early development. Real CLI integration, persistence and macOS packaging are not yet verified. The first milestone is a standalone Apple Silicon desktop app with Claude Code → Codex → Pi/DeepSeek handoff.
+Foundation only: deterministic task/workflow core and tests, desktop architecture and handoff specifications. Real CLI integrations, SQLite persistence and Tauri packaging are not yet implemented or verified.
+
+## Quick start (core only)
+
+Requires Node.js 22+.
+
+```sh
+npm test
+```
+
+For the next development steps read [HANDOFF](docs/HANDOFF.md), [PLAN](docs/PLAN.md), [ARCHITECTURE](docs/ARCHITECTURE.md), [PRD](docs/PRD.md) and [AGENTS](AGENTS.md).
+
+## Target workflow
+
+Claude Code plans → user approves → Codex implements → Pi/DeepSeek reviews → bounded repair or completion. All stages belong to one task ID and share explicit context.
 
 ## License
 
-MIT (see LICENSE once added).
+MIT.

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "plan-execute-review",
+  "description": "Illustrative template; runtime binding not implemented",
+  "roles": [
+    {
+      "role": "planner",
+      "adapter": "claude"
+    },
+    {
+      "role": "executor",
+      "adapter": "codex"
+    },
+    {
+      "role": "reviewer",
+      "adapter": "pi",
+      "model": "USER_CONFIGURED_DEEPSEEK_ID"
+    }
+  ],
+  "requirePlanApproval": true,
+  "maxExecutionAttempts": 3
+}
